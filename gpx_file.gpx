@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+     version="1.1"
+     creator="user">
+   <metadata>
+      <name>Cussac</name>
+      <link href="file:///instance1.xml">
+         <text>fr_cussac.txt</text>
+      </link>
+   </metadata>
+   <wpt lat="45.7055740420633" lon="0.8519611512411495">
+      <ele>349.0322265625</ele>
+      <name>Cussac</name>
+   </wpt>
+   <wpt lat="45.712939" lon="0.859333">
+      <ele>280.5089111328125</ele>
+      <name>Monnerie</name>
+   </wpt>
+   <wpt lat="45.67243279742165" lon="0.8256439978387133">
+      <ele>415.4050903320312</ele>
+      <name>Boubon</name>
+   </wpt>
+   <wpt lat="45.67606269511061" lon="0.8219117961938217">
+      <ele>420.0135498046875</ele>
+      <name>Villajou</name>
+   </wpt>
+   <wpt lat="45.68782102152895" lon="0.8150905847864954">
+      <ele>380.9435729980469</ele>
+      <name>Puymoroux</name>
+   </wpt>
+   <wpt lat="45.7055740420633" lon="0.8519611512411495">
+      <ele>349.0322265625</ele>
+      <name>Cussac</name>
+   </wpt>
+   <wpt lat="45.7055740420633" lon="0.8519611512411495">
+      <ele>349.0322265625</ele>
+      <name>Cussac</name>
+   </wpt>
+   <trk>
+      <name>Cussac</name>
+      <trkseg>
+         <trkpt lat="45.7055740420633" lon="0.8519611512411495">
+            <ele>349.0322265625</ele>
+            <time>2020-04-29T02:00:00</time>
+            <name>Cussac</name>
+         </trkpt>
+         <trkpt lat="45.712939" lon="0.859333">
+            <ele>280.5089111328125</ele>
+            <time>2020-04-29T03:00:00</time>
+            <name>Monnerie</name>
+         </trkpt>
+         <trkpt lat="45.67243279742165" lon="0.8256439978387133">
+            <ele>415.4050903320312</ele>
+            <time>2020-04-29T05:00:00</time>
+            <name>Boubon</name>
+         </trkpt>
+         <trkpt lat="45.67606269511061" lon="0.8219117961938217">
+            <ele>420.0135498046875</ele>
+            <time>2020-04-29T06:00:00</time>
+            <name>Villajou</name>
+         </trkpt>
+         <trkpt lat="45.68782102152895" lon="0.8150905847864954">
+            <ele>380.9435729980469</ele>
+            <time>2020-04-29T07:00:00</time>
+            <name>Puymoroux</name>
+         </trkpt>
+         <trkpt lat="45.7055740420633" lon="0.8519611512411495">
+            <ele>349.0322265625</ele>
+            <time>2020-04-29T08:00:00</time>
+            <name>Cussac</name>
+         </trkpt>
+         <trkpt lat="45.7055740420633" lon="0.8519611512411495">
+            <ele>349.0322265625</ele>
+            <time>2020-04-29T09:00:00</time>
+            <name>Cussac</name>
+         </trkpt>
+      </trkseg>
+   </trk>
+</gpx>

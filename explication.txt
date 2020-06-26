@@ -1,0 +1,17 @@
+### Vous trouvez là l'explication sur les fichiers attachés ci-joint ###
+
+NAM.xml contient les Ã©lÃ©ments <w> ayant comme valeur pour l'attribut `@type="NAM" qu'on a travailler 
+lÃ  dessus dans le dernier livrable.
+
+transform_to_gpx.xsl est le fichier xslt qui nous a permet de produire un fichier gpx.
+
+"xs:dateTime('2020-04-29T01:00:00') + position() * xs:dayTimeDuration('P0DT1H')" 
+la fonction utilisÃ© pour l'incrÃ©mentation du temps.
+
+J'ai fixÃ© la date initiale 
+
+Leaflet est une bibliothèque Javascript pour afficher des cartes interactives. Ce plugin, basé sur le travail de Pavel Shramov et de ses plugins-dépliants, il permet l'analyse et l'analyse d'une piste GPX afin de l'afficher comme une couche de carte Leaflet.
+En analysant les données GPX, il enregistrera des informations sur la piste enregistrée, y compris le temps total, le temps de déplacement, la distance totale, les statistiques d'altitude et la fréquence cardiaque.
+
+On a ajouter un marker pour chaque waypoint sur la carte qui vous pouvez le voir dans marker-icon.png avec son ombre marker-shadow.png
+De plus, nous avons ajouté des fenêtres contextuelles qui affichent des informations sur les points cliqués.

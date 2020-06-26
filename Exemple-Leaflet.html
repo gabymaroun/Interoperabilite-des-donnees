@@ -1,0 +1,71 @@
+<html>
+
+<head>
+  <title>Leaflet</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
+
+  <style>
+    #map {
+      width: 1500px;
+      height: 800px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="map" style="position: relative" ></div>
+
+  <script>
+
+    var map = L.map('map').setView([45.7055740420633, 0.8519611512411495], 8);
+
+    L.tileLayer('http://a.tile.opentopomap.org/{z}/{x}/{y}.png', {
+		maxZoom: 18, attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a>,' + ' <a href="http://mapbox.com">Mapbox</a>', id: 'mapbox.streets'}).addTo(map);
+
+
+    var gpx = '<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="user"> <metadata> <name>randonnée - Cussac</name> <link href="file:///instance_liv3.xml"> <text>fr_cussac.xml</text> </link> </metadata> <wpt lat="45.7055740420633" lon="0.8519611512411495"> <ele>349.0322265625</ele> <name>Cussac</name> </wpt> <wpt lat="45.712939" lon="0.859333"> <ele>280.5089111328125</ele> <name>Monnerie</name> </wpt> <wpt lat="45.687754" lon="0.857138"> <ele>376.1028137207031</ele> <name>Liades</name> </wpt> <wpt lat="45.67243279742165" lon="0.8256439978387133"> <ele>415.4050903320312</ele> <name>Boubon</name> </wpt> <wpt lat="45.67606269511061" lon="0.8219117961938217"> <ele>420.0135498046875</ele> <name>Villajou</name> </wpt> <wpt lat="45.68782102152895" lon="0.8150905847864954"> <ele>380.9435729980469</ele> <name>Puymoroux</name> </wpt> <wpt lat="45.7055740420633" lon="0.8519611512411495"> <ele>349.0322265625</ele> <name>Cussac</name> </wpt> <wpt lat="45.7055740420633" lon="0.8519611512411495"> <ele>349.0322265625</ele> <name>Cussac</name> </wpt> <trk> <trkseg> <trkpt lat="45.7055740420633" lon="0.8519611512411495"> <ele>349.0322265625</ele> <time>2020-04-24T00:08:37.553+02:00</time> <name>Cussac</name> </trkpt> <trkpt lat="45.712939" lon="0.859333"> <ele>280.5089111328125</ele> <time>2020-04-24T00:18:37.553+02:00</time> <name>Monnerie</name> </trkpt> <trkpt lat="45.687754" lon="0.857138"> <ele>376.1028137207031</ele> <time>2020-04-24T00:28:37.553+02:00</time> <name>Liades</name> </trkpt> <trkpt lat="45.67243279742165" lon="0.8256439978387133"> <ele>415.4050903320312</ele> <time>2020-04-24T00:38:37.553+02:00</time> <name>Boubon</name> </trkpt> <trkpt lat="45.67606269511061" lon="0.8219117961938217"> <ele>420.0135498046875</ele> <time>2020-04-24T00:48:37.553+02:00</time> <name>Villajou</name> </trkpt> <trkpt lat="45.68782102152895" lon="0.8150905847864954"> <ele>380.9435729980469</ele> <time>2020-04-24T00:58:37.553+02:00</time> <name>Puymoroux</name> </trkpt> <trkpt lat="45.7055740420633" lon="0.8519611512411495"> <ele>349.0322265625</ele> <time>2020-04-24T01:08:37.553+02:00</time> <name>Cussac</name> </trkpt> <trkpt lat="45.7055740420633" lon="0.8519611512411495"> <ele>349.0322265625</ele> <time>2020-04-24T01:18:37.553+02:00</time> <name>Cussac</name> </trkpt> </trkseg> </trk> </gpx> '
+
+
+    var g = new L.GPX(gpx, {
+      async: true,  
+      marker_options: {
+      wptIconUrls: {
+        '': 'marker-icon.png',
+        'Geocache Found': 'marker-icon.png',
+        'Park': 'marker-icon.png'
+        },
+        startIconUrl: 'marker-icon.png',
+        endIconUrl:'marker-icon.png',
+        shadowUrl: 'marker-shadow.png'},    
+      parseElements: ['track'],
+      polyline_options: {
+        color: 'orange'
+      }
+    });
+    
+    
+       g.on('loaded', function(e) {
+     var gpx = e.target,
+       name = gpx.get_name(),
+       distM = gpx.get_distance(),
+       distKm = distM / 1000,
+       distKmRnd = distKm.toFixed(1),
+       eleGain = gpx.get_elevation_gain().toFixed(0),
+       eleLoss = gpx.get_elevation_loss().toFixed(0);
+     var info = "Name: " + name + "</br>" +
+       "Distance: " + distKmRnd + " km </br>" +
+       "Elevation Gain: " + eleGain + " m </br>"
+       
+			gpx.getLayers()[0].bindPopup(info)
+       });
+
+    g.addTo(map);
+    
+  </script>
+</body>
+</html>
